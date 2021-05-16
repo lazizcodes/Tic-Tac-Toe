@@ -1,7 +1,16 @@
 let input = document.querySelectorAll("td")
 let status = document.querySelector("#status")
 
-let state = []
+let game = {
+    state: [],
+    isOver: false,
+    lastAct: 'O',
+    initState: function () {
+        for (let i = 0; i < 9; i++) {
+            this.state.push(0);
+        }
+    }
+}
 
 const winningStates = [
     [0, 1, 2],
@@ -14,12 +23,7 @@ const winningStates = [
     [2, 4, 6]
 ]
 
-function initState() {
-    for (let i = 0; i < 9; i++) {
-        state.push(0);
-    }
-}
-
+game.initState();
 
 function isSubset(arr1, arr2) {
     return arr2.every(e => arr1.includes(e))
@@ -29,14 +33,14 @@ function paint(s) {
     for (i of s) {
         // input[i].style.backgroundColor = '#94FFA9';
         input[i].style.backgroundColor = '#01FF70';
-    } 
+    }
 }
 
 function checkState() {
     const ones = [];
     const zeros = [];
 
-    state.forEach((e, i) => {
+    game.state.forEach((e, i) => {
         if (e === 1) ones.push(i);
         if (e === 2) zeros.push(i);
     })
@@ -45,29 +49,34 @@ function checkState() {
         if (isSubset(ones, s)) {
             status.textContent = 'Player X won 🎉';
             paint(s);
+            game.isOver = true;
+            return;
         } else if (isSubset(zeros, s)) {
             status.textContent = 'Player O won 🎉';
+            game.isOver = true;
             paint(s);
-        }       
+            return;
+        }
     }
 }
 
-let lastAct = 'O';
-
 input.forEach((e, i) => {
     e.addEventListener('click', function () {
+        if (game.isOver === true) {
+            return;
+        }
         if (e.textContent !== "") {
             return;
         }
-        if (lastAct === 'O') {
+        if (game.lastAct === 'O') {
             status.textContent = "Player O"
-            lastAct = 'X';
-            state[i] = 1;
+            game.lastAct = 'X';
+            game.state[i] = 1;
             e.textContent = 'X';
-        } else if (lastAct === 'X') {
+        } else if (game.lastAct === 'X') {
             status.textContent = "Player X"
-            lastAct = 'O';
-            state[i] = 2;
+            game.lastAct = 'O';
+            game.state[i] = 2;
             e.textContent = 'O';
         }
         checkState();
@@ -80,7 +89,8 @@ button.addEventListener('click', function () {
         e.textContent = ""
         e.style.backgroundColor = 'white';
     })
-    lastAct = 'O';
-    state = [];
+    game.lastAct = 'O';
+    game.state = [];
+    game.status = false;
     status.textContent = 'Player X'
 })
