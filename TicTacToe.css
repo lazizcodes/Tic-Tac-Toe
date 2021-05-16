@@ -51,13 +51,25 @@ td {
 
 .jumbtron-container {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    flex-direction: column;
+    flex-direction: row;
 }
 
 .game-title {
     align-self: flex-start;
+}
+.author {
+    align-self: flex-start;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.author img {
+    display: block;
+    width: 50px;
 }
 
 .status {
