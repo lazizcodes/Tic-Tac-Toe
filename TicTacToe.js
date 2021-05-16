@@ -6,9 +6,13 @@ let game = {
     isOver: false,
     lastAct: 'O',
     initState: function () {
+        this.state = [];
         for (let i = 0; i < 9; i++) {
             this.state.push(0);
         }
+
+        this.lastAct = 'O';
+        this.isOver = false;
     }
 }
 
@@ -48,8 +52,8 @@ function checkState() {
     for (let s of winningStates) {
         if (isSubset(ones, s)) {
             status.textContent = 'Player X won 🎉';
-            paint(s);
             game.isOver = true;
+            paint(s);
             return;
         } else if (isSubset(zeros, s)) {
             status.textContent = 'Player O won 🎉';
@@ -89,8 +93,6 @@ button.addEventListener('click', function () {
         e.textContent = ""
         e.style.backgroundColor = 'white';
     })
-    game.lastAct = 'O';
-    game.state = [];
-    game.status = false;
+    game.initState();
     status.textContent = 'Player X'
 })
