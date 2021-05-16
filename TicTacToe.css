@@ -1,0 +1,22 @@
+.jumbotron {
+    background-color: #001f3f;
+    color: #0074D9;
+    padding: 2%;
+    border-radius: 5px;
+}
+
+table, th, td {
+    border: 2px solid black;
+    color: darkblue;
+    align-self: center;
+    margin-top: 5%;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 50px;
+}
+
+td {
+    width: 100px;
+    height: 100px;
+    text-align: center;
+}
