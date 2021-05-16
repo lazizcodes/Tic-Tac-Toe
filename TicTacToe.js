@@ -1,6 +1,6 @@
 let input = document.querySelectorAll("td")
 
-const state = []
+let state = []
 for (let i = 0; i < 9; i++) {
     state.push(0);
 }
@@ -61,4 +61,5 @@ let button = document.querySelector("#restartBttn")
 button.addEventListener('click', function () {
     input.forEach(e => e.textContent = "")
     lastAct = 'O';
+    state = [];
 })
