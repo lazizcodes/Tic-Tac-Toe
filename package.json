@@ -1,0 +1,22 @@
+{
+  "name": "y",
+  "version": "1.0.0",
+  "description": "",
+  "main": "TicTacToe.js",
+  "scripts": {
+    "deploy": "gh-pages -d TicTacToe"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lazizcodes/Tic-Tac-Toe.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lazizcodes/Tic-Tac-Toe/issues"
+  },
+  "homepage": "https://lazizcodes.github.io/Tic-Tac-Toe/",
+  "devDependencies": {
+    "gh-pages": "^3.1.0"
+  }
+}
