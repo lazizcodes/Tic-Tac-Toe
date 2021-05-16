@@ -1,22 +1,51 @@
+* {
+    font-family: 'Pangolin', cursive;
+}
+
+#restartBttn {
+    border-radius: 50px;
+    background-color: #85144b;
+    border: 0px;
+}
+
 .jumbotron {
-    background-color: #001f3f;
-    color: #0074D9;
+    background-color: #FFDC00;
+    color: #85144b;
     padding: 2%;
     border-radius: 5px;
 }
 
 table, th, td {
     border: 2px solid black;
-    color: darkblue;
+    color: #0074D9;
     align-self: center;
-    margin-top: 5%;
+    margin-top: 1%;
     margin-left: auto;
     margin-right: auto;
     font-size: 50px;
+    font-family: 'Pangolin', cursive;
+    transition: all 0.3s;
 }
 
 td {
     width: 100px;
     height: 100px;
+    text-align: center;
+}
+
+.jumbtron-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.game-title {
+    align-self: flex-start;
+}
+
+.status {
+    padding-top: 20px;
+    font-family: 'Pangolin', cursive;
     text-align: center;
 }

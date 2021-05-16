@@ -12,25 +12,31 @@
         integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous">
     </script>
     <link rel="stylesheet" href="TicTacToe.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Pangolin&display=swap" rel="stylesheet">
 </head>
 
 <body>
-
     <div class="container">
-        <div class="jumbotron">
-            <h1 class="display-4">Tic Tac Toe</h1>
-            <p class="lead">
-                <a class="btn btn-primary btn-lg" id="restartBttn" href="#" role="button">Restart</a>
-            </p>
+        <div class="jumbotron jumbtron-container">
+            <div class="game-title">
+                <h1 class="display-3">Tic Tac Toe</h1>
+                <p class="lead">
+                    <a class="btn btn-primary btn-lg" id="restartBttn" href="#" role="button">Restart</a>
+                </p>
+            </div>
         </div>
     </div>
 
     <div class="container">
+        <div class="status">
+            <h1 id="status">Player X</h1>
+        </div>
         <table class="center">
             <tr>
-               <td></td>
-               <td></td>
-               <td></td> 
+                <td></td>
+                <td></td>
+                <td></td>
             </tr>
             <tr>
                 <td></td>
