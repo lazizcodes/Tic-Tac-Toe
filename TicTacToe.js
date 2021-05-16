@@ -35,7 +35,6 @@ function isSubset(arr1, arr2) {
 
 function paint(s) {
     for (i of s) {
-        // input[i].style.backgroundColor = '#94FFA9';
         input[i].style.backgroundColor = '#01FF70';
     }
 }
@@ -61,6 +60,14 @@ function checkState() {
             paint(s);
             return;
         }
+    }
+
+    let isDraw = game.state.every(e => e !== 0);
+    if (isDraw) {
+        game.isOver = true;
+        status.textContent = 'Draw 🤝';
+        input.forEach(e => e.style.backgroundColor = '#ffe958')
+        return;
     }
 }
 
